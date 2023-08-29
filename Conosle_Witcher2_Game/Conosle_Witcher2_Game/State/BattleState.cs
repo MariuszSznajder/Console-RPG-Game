@@ -95,16 +95,6 @@ namespace Conosle_Witcher2_Game.State
                     Console.WriteLine("but fail.");
                     playerWeapon.MaximumShots -= 1;
                 }
-                if (run.Equals(6) || run.Equals(7))
-                {
-                    playerWeapon.MaximumShots += BonusShots.ExtraShots();
-                    BonusShots.DisplayBonusShots(2, player.PlayerName);
-                }
-                if (run.Equals(0))
-                {
-                    monsterWeapon.MaximumShots += BonusShots.ExtraShots();
-                    BonusShots.DisplayBonusShots(2, monster.MonsterName);
-                }
                 if (run.Equals(2) || run.Equals(4))
                 {
                     Console.WriteLine($"The monster counterattacks! {monster.MonsterName} get HP! {player.PlayerName} lose HP!");
@@ -115,6 +105,16 @@ namespace Conosle_Witcher2_Game.State
                     monsterWeapon.MaximumShots -= 1;
                     BattleLogic();
 
+                }
+                if (run.Equals(6) || run.Equals(7))
+                {
+                    playerWeapon.MaximumShots += BonusShots.ExtraShots();
+                    BonusShots.DisplayBonusShots(2, player.PlayerName);
+                }
+                if (run.Equals(0))
+                {
+                    monsterWeapon.MaximumShots += BonusShots.ExtraShots();
+                    BonusShots.DisplayBonusShots(2, monster.MonsterName);
                 }
                 if (level.CurrentLevel > level.FinalLevel)
                 {
